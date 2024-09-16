@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Anniversary</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link for external fonts (optional) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display|Lora|Raleway">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="top-bar">
+            <p></p>
+        </div>
+        <div class="header-content">
+            <img src="fto16.jpeg" alt="sekar ayu Events Logo" class="header-logo">
+            <h1>Anniversary</h1>
+
+            <p class="header-subtitle">Kenangan yang kita buat bersama</p>
+
+            <div class="jam"></div>
+                <h2>Save the Date</h2>
+                <h3>19/11/21</h3>
+                <div class="countdown">
+                  <div class="time-box">
+                    <span id="days">00</span>
+                    <p>Hari</p>
+                  </div>
+                  <div class="time-box">
+                    <span id="hours">00</span>
+                    <p>Jam</p>
+                  </div>
+                  <div class="time-box">
+                    <span id="minutes">00</span>
+                    <p>Menit</p>
+                  </div>
+                  <div class="time-box">
+                    <span id="seconds">00</span>
+                    <p>Detik</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="audio-player" autoplay loop>
+            <audio controls autoplay loop>
+                <source src="dandelions.mpeg" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </header>
+
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+        <div class="welcome-text">
+            <h2>My Love</h2>
+            <p>Selamat anniversary </p>
+            <p>Untuk orang yang paling aku sayang. <br>Tidak ada yang lebih menyenangkan daripada menghabiskan waktu denganmu,bahkan saat kita berdebat tentang hal-hal kecil. 
+                <br>Kamu adalah orang yang sempurna untukku, dan aku tidak bisa menunggu untuk melihat petualangan apa yang akan kita jalani berikutnya </p>
+                <a href="kenangan.html" class="button">Kenangan Bersama</a>
+        </div><br>
+        <div class="welcome-image">
+            <img src="fto1.png.jpeg" alt="Welcome Image">
+        </div>
+    </section>
+
+    <!-- Planning & Design Section -->
+    <section class="planning-section">
+        <div class="planning-text">
+            <h2>Perjalanan Kita</h2>
+            <p>Dari hari pertama bertemu hingga hari ini,setiap langkah bersamamu adalah kisah indah yang tak tergantikan... <br>
+                Setiap momen yang kita lalui membuat kita semakin dekat dan saling memahami.
+            </p>
+            
+        </div>
+        
+    </section>
+
+    
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Anniversary Events</p>
+            
+        </div>
+    </footer>
+
+    <!-- Background Music -->
+    <audio id="background-music" autoplay loop>
+        <source src="laguPernikan.mp3.mpeg" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="scripts.js"></script>
+
+    <script>
+        // Set the date we're counting down to
+        let countDownDate = new Date("Nov 19, 2024 23:59:59").getTime();
+
+        // Update the countdown every 1 second
+        let countdownFunction = setInterval(function() {
+          // Get the current time
+          let now = new Date().getTime();
+        
+          // Find the difference between now and the countdown date
+          let distance = countDownDate - now;
+        
+          // Calculate time units
+          let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+          // Output the result in the respective elements
+          document.getElementById("days").innerHTML = days;
+          document.getElementById("hours").innerHTML = hours;
+          document.getElementById("minutes").innerHTML = minutes;
+          document.getElementById("seconds").innerHTML = seconds;
+        
+          // If the countdown is finished, display "00" for all values
+          if (distance < 0) {
+            clearInterval(countdownFunction);
+            document.getElementById("days").innerHTML = "00";
+            document.getElementById("hours").innerHTML = "00";
+            document.getElementById("minutes").innerHTML = "00";
+            document.getElementById("seconds").innerHTML = "00";
+          }
+        }, 1000);
+    </script>
+    
+</body>
+</html>
